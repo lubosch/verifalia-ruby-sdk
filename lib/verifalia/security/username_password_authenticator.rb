@@ -43,8 +43,7 @@ module Verifalia
       end
 
       def authenticate(connection, request)
-        header = Faraday::Utils.basic_header_from(@username, @password)
-        request.headers[Faraday::Request::Authorization::KEY] = header
+        request.basic_auth(@username, @password)
       end
     end
   end
