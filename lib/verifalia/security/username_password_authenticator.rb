@@ -43,7 +43,7 @@ module Verifalia
       end
 
       def authenticate(connection, request)
-        request.basic_auth(@username, @password)
+        connection.request(:basic_auth, @username, @password)
       end
     end
   end
